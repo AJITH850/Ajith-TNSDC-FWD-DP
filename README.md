@@ -1,26 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <style>
+    /* General Styles */
+    :root { --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#22d3ee; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(160deg,#0b1224 0%, #0f172a 40%, #0b1224 100%);
+      color: var(--text);
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
+    /* Navbar */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(17,24,39,0.85); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav {
+      max-width: 1100px; margin: 0 auto; padding: 12px 16px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand { font-weight: 700; letter-spacing: .5px; }
+    .brand span { color: var(--accent); }
+    .nav ul { list-style: none; display: flex; gap: 18px; padding: 0; margin: 0; }
+    .nav a { padding: 8px 10px; border-radius: 10px; color: var(--muted); }
+    .nav a:hover, .nav a:focus { color: var(--text); background: rgba(255,255,255,0.06); }
 
-Navigation Menu
-Ajith-TNSDC-FWD-DP
+    /* Sections */
+    section { padding: 70px 16px; }
+    .wrap { max-width: 1100px; margin: 0 auto; }
+    .hero {
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: center;
+      padding-top: 32px;
+    }
+    .hero h1 { font-size: clamp(28px, 5vw, 48px); margin: 0 0 8px; }
+    .hero p { color: var(--muted); margin: 0 0 20px; line-height: 1.6; }
+    .cta { display: inline-flex; gap: 12px; }
+    .btn {
+      padding: 10px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.12);
+      background: #0b1324; color: var(--text); cursor: pointer;
+    }
+    .btn.primary { background: var(--accent); color: #0b1324; border: none; font-weight: 700; }
+    .btn:hover { filter: brightness(1.08); }
 
-Code
-Issues
-Pull requests
-Ajith-TNSDC-FWD-DP
-/new.html
-AJITH850
-AJITH850
-1 hour ago
-222 lines (209 loc) · 7.87 KB
+    /* Cards */
+    .grid { display: grid; gap: 16px; }
+    .grid.three { grid-template-columns: repeat(3, 1fr); }
+    .grid.two { grid-template-columns: repeat(2, 1fr); }
+    .card {
+      background: rgba(17,24,39,0.8);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px; padding: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+    .card h3 { margin: 10px 0 6px; }
+    .muted { color: var(--muted); }
 
-Code
+    /* Contact */
+    form { display: grid; gap: 12px; }
+    input, textarea {
+      width: 100%; padding: 12px 14px; border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.14); background: #0b1324; color: var(--text);
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    .small { font-size: 12px; color: var(--muted); }
 
-Blame
-Older
-Newer
+    /* Footer */
+    footer { text-align: center; padding: 24px 16px; color: var(--muted); }
 
-Add files via upload
-1 hour ago
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid.three { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .nav ul { gap: 8px; }
+      .grid.three, .grid.two { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
   <!-- Navbar -->
